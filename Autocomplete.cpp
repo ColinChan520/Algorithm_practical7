@@ -1,12 +1,12 @@
-#include "Autocompletion.h"
+#include "Autocomplete.h"
 
-void Autocompletion::insert(string word){
+void Autocomplete::insert(string word){
     Trie* trie = new Trie();
     trie->insert(word);
     this->trie = trie;
 }
 
-vector<string> Autocompletion:: getSuggestions(string partialWord){
+vector<string> Autocomplete:: getSuggestions(string partialWord){
     Node* node= this->trie->search(partialWord);
     if(node==NULL) {
         return;

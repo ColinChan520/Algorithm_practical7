@@ -1,5 +1,5 @@
-#ifndef AUTOCOMPLETION_H
-#define AUTOCOMPLETION_H
+#ifndef AUTOCOMPLETE_H
+#define AUTOCOMPLETE_H
 #include <iostream>
 #include <vector>
 #include "Node.h"
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class Autocompletion
+class Autocomplete
 {
     public:
     vector<string> getSuggestions(string partialWord);  
