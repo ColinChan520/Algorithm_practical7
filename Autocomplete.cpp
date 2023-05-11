@@ -1,9 +1,7 @@
 #include "Autocomplete.h"
 
 void Autocomplete::insert(string word){
-    Trie* trie = new Trie();
     trie->insert(word);
-    this->trie = trie;
 }
 
 vector<string> Autocomplete:: getSuggestions(string partialWord){
@@ -12,7 +10,6 @@ vector<string> Autocomplete:: getSuggestions(string partialWord){
     if(node==NULL) {
         return result;
     }
-    this->trie->getAllWords(node,partialWord);
-    result = this->trie->words;
+    result = this->trie->getAllWords(node,partialWord);
     return result;
 }

@@ -12,6 +12,9 @@ class Autocomplete
     public:
     vector<string> getSuggestions(string partialWord);  
     void insert(string word);
+    Autocomplete(){
+        this->trie = new Trie();
+    }
     Trie* trie;
 };
 
