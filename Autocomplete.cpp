@@ -7,10 +7,12 @@ void Autocomplete::insert(string word){
 }
 
 vector<string> Autocomplete:: getSuggestions(string partialWord){
+    vector<string> result;
     Node* node= this->trie->search(partialWord);
     if(node==NULL) {
-        return;
+        return result;
     }
     this->trie->getAllWords(node,partialWord);
-    return this->trie->words;
+    result = this->trie->words;
+    return result;
 }
