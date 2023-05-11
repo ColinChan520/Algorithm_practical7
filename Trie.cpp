@@ -28,11 +28,12 @@ void Trie::insert(string word){
     currentNode->childs.push_back(endNode);
 }
 
-void Trie::getAllWords(Node* node,string word){
+vector<string> Trie::getAllWords(Node* node,string word){
     Node* currentNode = node;
     vector<Node*> childs = currentNode->childs;
     for(int i = 0; i < childs.size(); i++){
         if(childs[i]->data == '#'){
+            // cout<<word<<endl;
             this->words.push_back(word);
         }
         else{
@@ -41,6 +42,10 @@ void Trie::getAllWords(Node* node,string word){
             getAllWords(childs[i], word_);
         }
     }
+    return this->words;
+    // for(int i=0; i<this->words.size(); i++) {
+    //     cout<<this->words[i]<<endl;
+    // }
 }
 
 Node* Trie::search(string word) {

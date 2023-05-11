@@ -17,7 +17,7 @@ class Trie
     }
     void insert(string word);
     Node* findChild(Node* parent,char ch);
-    void getAllWords(Node* node,string word);
+    vector<string> getAllWords(Node* node,string word);
     Node* search(string word);
 };
 
