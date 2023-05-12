@@ -17,6 +17,7 @@ void Trie::insert(string word){
         if(childNode == NULL){
             Node* newNode = new Node();
             newNode->data=word[i];
+            newNode->level=currentNode->level +1;
             currentNode->childs.push_back(newNode);
             currentNode = newNode;
         }

@@ -9,9 +9,11 @@ class Node
 {
     public:
     char data;
+    int level;
     vector<Node*> childs;
     Node(){
         this->data='#';
+        this->level=0;
     }
     
 
